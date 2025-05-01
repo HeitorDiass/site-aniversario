@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Aniversário!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe0f0, #ffe6ff);
+      text-align: center;
+      color: #d63384;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 60px;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .galeria img {
+      width: 250px;
+      height: auto;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    #botao-fujao {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: top 0.2s ease, left 0.2s ease;
+    }
+
+    #mensagem-secreta {
+      display: none;
+      font-size: 2em;
+      margin-top: 40px;
+      color: #4CAF50;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Feliz Aniversário! 🎂</h1>
+
+  <div class="galeria">
+    <img src="imagens/foto1.jpg" alt="Foto 1">
+    <img src="imagens/foto2.jpg" alt="Foto 2">
+    <img src="imagens/foto3.jpg" alt="Foto 3">
+    <img src="imagens/foto4.jpg" alt="Foto 4">
+    <!-- Adicione mais fotos se quiser -->
+  </div>
+
+  <!-- Botão que foge -->
+  <button id="botao-fujao">Clique aqui 🎁</button>
+
+  <!-- Mensagem escondida -->
+  <div id="mensagem-secreta">🎉 Você conseguiu! Feliz Aniversário! 🎂💖</div>
+
+  <footer>
+    Com carinho 💖
+  </footer>
+
+  <script>
+    const botao = document.getElementById('botao-fujao');
+    const mensagem = document.getElementById('mensagem-secreta');
+
+    botao.addEventListener('mouseover', () => {
+      const larguraJanela = window.innerWidth;
+      const alturaJanela = window.innerHeight;
+
+      const novaPosicaoX = Math.random() * (larguraJanela - botao.offsetWidth);
+      const novaPosicaoY = Math.random() * (alturaJanela - botao.offsetHeight);
+
+      botao.style.left = `${novaPosicaoX}px`;
+      botao.style.top = `${novaPosicaoY}px`;
+    });
+
+    botao.addEventListener('click', () => {
+      mensagem.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
