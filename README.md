@@ -18,7 +18,7 @@ Este projeto é uma página web comemorativa feita com **HTML, CSS e JavaScript*
 
 ## 📁 Estrutura do Projeto
 
-/projeto/ ├── index.html └── imagens/ ├── foto1.jpg ├── foto2.jpg └── ...
+/projeto/ ├── index.html /> style.css /> script.js />
 
 ## 🧠 Objetivo
 
